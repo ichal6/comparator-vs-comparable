@@ -1,7 +1,7 @@
 package pl.lechowicz;
 
 import java.util.Objects;
-public class Patient implements Comparable<Patient>{
+public class Patient{
     private String name;
     private String lastName;
     private Integer age;
@@ -46,10 +46,5 @@ public class Patient implements Comparable<Patient>{
                 ", age=" + age +
                 ", isMale=" + isMale +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Patient o) {
-        return o.age.compareTo(this.age);
     }
 }

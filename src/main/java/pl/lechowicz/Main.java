@@ -20,7 +20,14 @@ public class Main {
         ) {
             System.out.println(patient.toString());
         }
-        Collections.sort(patients);
+        Collections.sort(patients, (p1, p2) -> {
+            int byGender = p1.getMale() ? p2.getMale() ? 0 : 1 : p2.getMale() ? -1 : 0;
+            if(byGender == 0){
+                return p2.getAge().compareTo(p1.getAge());
+            } else {
+                return byGender;
+            }
+        });
         System.out.println("Dane po przesortowaniu: ");
         for (Patient patient :patients
         ) {
